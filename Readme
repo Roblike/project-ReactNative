@@ -1,1 +1,11 @@
 
+PowerShell (admin) > Abre a pasta instalura-api > npm start
+Abre um novo PowerShell (admin) > abre a pasta Instalura > npx react-native run-android com o emulador android aberto 
+
+Se der erro: React Native Task :app:validateSigningDebug FAILED
+
+O problema é que a compilação está procurando o keystore de depuração e não pode encontrá-lo, nesse caso, no powershell (admin) vai 
+ate a pasta onde salvou o projeto e abra-o > android > app 
+e execute a seguinte linha de comando: npx keytool -genkey -v -keystore debug.keystore
+  -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+  logo após execute novamente na pasta do projeto > npx react-native run-android
